@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gavinolla Sujatha - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f6f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      color: #2979ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #1c54b2;
+    }
+    /* Navbar */
+    nav {
+      background: #212121;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #fff;
+      letter-spacing: 2px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    nav ul li a {
+      color: #eee;
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    nav ul li a:hover {
+      color: #2979ff;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #2563eb 40%, #1e40af 100%);
+      color: #fff;
+      padding: 5rem 3rem 7rem 3rem;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: 3px;
+    }
+    header p {
+      font-size: 1.3rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.4;
+    }
+    header .btn-primary {
+      background: #fefefe;
+      color: #2563eb;
+      font-weight: 700;
+      padding: 0.8rem 2.5rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(255,255,255,0.5);
+      border: none;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    header .btn-primary:hover {
+      background: #1e40af;
+      color: #fff;
+      box-shadow: 0 6px 15px rgba(30,64,175,0.7);
+    }
+
+    /* Main section */
+    main {
+      max-width: 1000px;
+      background: #fff;
+      margin: -7rem auto 3rem auto;
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      justify-content: center;
+    }
+    /* About image */
+    .profile-img {
+      max-width: 280px;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
+      flex-shrink: 0;
+    }
+
+    /* About content */
+    .about-text {
+      flex: 1 1 580px;
+      color: #444;
+    }
+    .about-text h2 {
+      color: #2563eb;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-size: 2.2rem;
+    }
+    .about-text p {
+      font-weight: 400;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .about-text .btn-primary {
+      background: #2563eb;
+      color: #fff;
+      padding: 0.7rem 2rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .about-text .btn-primary:hover {
+      background: #1e40af;
+    }
+
+    /* Section styling for Skills, Projects, Resume, Contact */
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      background: #fff;
+      padding: 2.5rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+    section h3 {
+      color: #2563eb;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      border-bottom: 3px solid #2563eb;
+      padding-bottom: 0.3rem;
+      width: fit-content;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      color: #555;
+      font-size: 1.1rem;
+    }
+    ul li {
+      margin-bottom: 0.7rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #2563eb;
+      font-weight: 700;
+      font-size: 1.4rem;
+      line-height: 1;
+      top: 0;
+    }
+    /* Resume / Project buttons */
+    .btn-resume {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: #2563eb;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      font-size: 0.9rem;
+    }
+    .btn-resume:hover {
+      background: #1e40af;
+    }
+
+    /* Footer */
+    footer {
+      background: #212121;
+      text-align: center;
+      padding: 1rem 2rem;
+      color: #eee;
+      font-weight: 400;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      margin-top: 3rem;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      main {
+        margin: -5rem 1.5rem 2rem 1.5rem;
+        flex-direction: column;
+        padding: 2rem;
+      }
+      nav ul {
+        gap: 1rem;
+      }
+      nav ul li a {
+        font-size: 0.9rem;
+      }
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+        max-width: 310px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .about-text h2 {
+        font-size: 1.8rem;
+      }
+      section {
+        margin: 1.5rem 1rem;
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Online Portfolio</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h2>G SUJATHA</h2>
+    <p>Web developer | Programmer</p>
+    <a href="#resume" class="btn-primary">Download CV</a>
+  </header>
+
+  <!-- Main About Section -->
+  <main id="about">
+    <img src="" alt="Profile Picture" class="profile-img" />
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        Hi, I’m Gavinolla Sujatha, a passionate Computer Science (AI & ML) student with a strong interest in software development, web technologies, and problem-solving.
+
+        My goal is to grow as a skilled developer, contribute to impactful projects, and explore innovative solutions in technology.
+      </p>
+      <a href="#resume" class="btn-primary">Download CV</a>
+    </div>
+  </main>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h3>Skills</h3>
+    <ul>
+      <li>HTML & CSS</li>
+      <li>JavaScript </li>
+      <li>Python & Java (basic)</li>
+      <li>Git & Version Control</li>
+      <li>aptitude and reasoning</li>
+      
+    </ul>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h3>Projects</h3>
+    <ul>
+      <li>
+        <strong>Travel and blogging</strong><br>
+        Modern, mobile-friendly site showcasing work using HTML, CSS & JavaScript.
+        <br>
+        <a href="c:\Users\sujat\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\D94E18A8ADB4CC0F623F7A83B1AC75B4\Travel-and-blogging.-main (1).zip" download class="btn-resume">Download Project</a>
+        <a href="https://github.com/radhikachary321" target="_blank" class="btn-resume">View Live</a>
+      </li>
+      <li>
+        <strong>Todo App</strong><br>
+        Dynamic task manager built with JavaScript for enhanced productivity.
+        <br>
+        <a href="projects/todo-app.zip" download class="btn-resume">Download Project</a>
+        <a href="projects/todo-app/index.html" target="_blank" class="btn-resume">View Live</a>
+      </li>
+      <!-- Add more projects here -->
+    </ul>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume">
+    <h3>Resume</h3>
+    <p>Download my resume to learn more about my skills and experience.</p>
+    <a href="https://in.docworkspace.com/d/sIJSG7ejEAoyFtsYG?sa=601.1037" download class="btn-resume">Download Resume</a>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h3>Contact</h3>
+    <p>Email: radhikachary45@gmail.com</p>
+    <p>Phone: 9392355784</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Radhika Chary | <a href="https://www.linkedin.com/in/radhika-chary-44bbb42ba/" target="_blank">LinkedIn</a>
+  </footer>
+
+</body>
+</html>
